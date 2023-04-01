@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body>
+    <div class="main">
+      <%- include header %>
+      <%- include leftnav %>
+
+        <div class="content">
+          <h2>Hall Booking</h2>
+          <%- include message %>
+          <div class="container">
+            <form action="hallbooking" method="POST">
+              <div class="middle">
+                <% for (const i in userList) { %>
+                  <input type="hidden" id="txtID" name="txtUserId" value="<%= userList[i].UserId %>" >
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" maxlength="20" minlength="2" id="fname" name="firstname" pattern="[A-Za-z]{1,32}"
+                        value="<%= userList[i].FirstName %>" readonly placeholder="Your name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" maxlength="20" minlength="2" id="lname" name="lastname" pattern="[A-Za-z]{1,32}"
+                        value="<%= userList[i].LastName %>" readonly placeholder="Your last name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="cno">Contact No</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" minlength="10" maxlength="12" id="cno" name="contact no" pattern="[0-9]{10}"
+                      value="<%= userList[i].Contactno %>" readonly placeholder="Your contact no..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="address">Address</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="address" name="Address" value="<%= userList[i].Address %>" readonly placeholder="Your address..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="ename">Event Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="ename" name="ename" required placeholder="Your event name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="ename">Date</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="date" id="edate" name="edate" required placeholder="Your event name.." value="<%= edate %>">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="ename">Amount Paid</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="eamountpaid" name="eamountpaid" required placeholder="Your event name.." value="1000" readonly>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="ename">Mode of Payment</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="emodeofpayment" name="emodeofpayment" required placeholder="Your event name.." value="Card" readonly>
+                    </div>
+                  </div>
+                <% } %>
+                <div class="row">
+                  <input type="submit" value="Submit">
+                </div>
+              </div>
+            </form>
+          </div>
+
+  </body>
+
+</html>
