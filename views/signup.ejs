@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="content">
+        <h2>Register</h2>
+        <%- include message %>
+        <div class="container">
+          <form action="signup" method="POST">
+            <div class="middle">
+              <div class="row">
+                <div class="col-25">
+                  <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" maxlength="20" minlength="2" id="fname" name="firstname" pattern="[A-Za-z]{1,32}"
+                    value="" required placeholder="Your name..">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" maxlength="20" minlength="2" id="lname" name="lastname" pattern="[A-Za-z]{1,32}"
+                    value="" required placeholder="Your last name..">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="ename">Email ID</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="emailid" name="emailid" required placeholder="Your Email Id.." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="cno">Contact No</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" minlength="10" maxlength="12" id="cno" name="contactno" pattern="[0-9]{10}"
+                    required placeholder="Your contact no..">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="ename">User Name</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="username" name="username" required placeholder="Your User name.." pattern="[A-Za-z]{1,32}">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="ename">Password</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="password" name="password" required placeholder="Your password..">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="address">Address</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="address" name="address" required placeholder="Your address..">
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" value="Submit">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

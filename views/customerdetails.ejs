@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+  <div class="main">
+    <%- include header %>
+    <%- include leftnav %>
+
+    <div class="content">
+      <h2>Customer Details</h2>
+      <table>
+        <tr class="trheading">
+          <th>Name of the event</th>
+          <th>Date</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Contact no</th>
+          <th>Address</th>
+          <th>Email id</th>
+         </tr>
+        
+         <% for (const i in bookingList) { %>
+          <tr>
+            <td><%= bookingList[i].Nameoftheevent %></td>
+            <td><%= bookingList[i].Date %></td>
+            <td><%= bookingList[i].Firstname %></td>
+            <td><%= bookingList[i].Lastname %></td>
+            <td><%= bookingList[i].Contactno  %></td>
+            <td><%= bookingList[i].Address %></td>
+            <td><%= bookingList[i].EmailId %></td>
+          </tr>
+        <% } %>
+      </table>
+
+  </div>
+</body>
+
+</html>
